@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InterviewDataService } from '../interview-data.service';
 
 @Component({
   selector: 'lexi-welcome',
@@ -6,40 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.less'],
 })
 export class WelcomeComponent implements OnInit {
-  path="/details"
-  data: any = [
-    {
-      cosultantCompany: 'OlympiaCG',
-      endClient: 'citi',
-      jobTitle: 'Sr. Developer',
-      jobTech: ['node', 'angular'],
-      levelInterview: 'two',
-      date: new Date(),
-      recuriterName: 'asd',
-      recuriterEmail: 'asdfdf',
-    },
-    {
-      cosultantCompany: 'Zulifqar',
-      endClient: 'citi',
-      jobTitle: 'Sr. Developer',
-      jobTech: ['node', 'angular'],
-      levelInterview: 'two',
-      date: new Date(),
-      recuriterName: 'asd',
-      recuriterEmail: 'asdfdf',
-    },
-    {
-      cosultantCompany: 'Malik',
-      endClient: 'citi',
-      jobTitle: 'Sr. Developer',
-      jobTech: ['node', 'angular'],
-      levelInterview: 'two',
-      date: new Date(),
-      recuriterName: 'asd',
-      recuriterEmail: 'asdfdf',
-    },
-  ];
-  constructor() {}
+  path = '/details';
+  data: any ;
+  constructor(private interviewData: InterviewDataService) { }
+  
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+     this.data = this.interviewData.getData();
+  }
 }

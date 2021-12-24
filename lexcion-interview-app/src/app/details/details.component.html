@@ -1,1 +1,27 @@
-<p>details works!</p>
+<div class="alert alert-primary" role="alert">
+  Consultant Company: {{ details.cosultantCompany }}
+</div>
+<div class="alert alert-secondary" role="alert">
+  <div class="row h3">
+    <div class="col-6 " style=" border-right: 4px solid blue;">End Client</div>
+    <div class="col-6">{{ details.endClient }}</div>
+  </div>
+</div>
+<div class="alert alert-success" role="alert">
+  {{ details.jobTitle }}
+</div>
+<div class="alert alert-danger" role="alert">
+  {{ details.jobTech }}
+</div>
+<div class="alert alert-warning" role="alert">
+  {{ details.levelInterview }}
+</div>
+<div class="alert alert-info" role="alert">
+  {{ details.date | date:'MM/dd/yy' }}
+</div>
+<div class="alert alert-light" role="alert">
+  {{ details.recuriterName }}
+</div>
+<div class="alert alert-dark" role="alert">
+  {{ details.recuriterEmail }}
+</div>
