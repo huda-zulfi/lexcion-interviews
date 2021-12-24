@@ -1,0 +1,16 @@
+<p>welcome works!</p>
+
+<div class="row">
+  <ng-container *ngFor="let d of data">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ d.cosultantCompany }}</h5>
+          <p class="card-text">{{ d.recuriterName }}</p>
+          <p class="card-text">{{ d.jobTitle }}</p>
+          <a href="#" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
