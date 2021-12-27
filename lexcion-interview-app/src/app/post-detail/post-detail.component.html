@@ -1,0 +1,75 @@
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Interview ID</label>
+    <input
+      type="number"
+      class="form-control"
+      id="validationCustom01"
+      value=""
+      name="interviewID"
+      required
+      [(ngModel)]="interviewID"
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label"
+      >Consultant Company</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="validationCustom01"
+      value=""
+      name="consultantCompany"
+      required
+      [(ngModel)]="consultantCompany"
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">End Client</label>
+    <input
+      type="text"
+      class="form-control"
+      id="validationCustom01"
+      value=""
+      name="endClient"
+      required
+      [(ngModel)]="endClient"
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Job Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="validationCustom01"
+      value=""
+      name="jobTitle"
+      required
+      [(ngModel)]="jobTitle"
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Job Technology</label>
+    <input
+      type="text"
+      class="form-control"
+      id="validationCustom01"
+      value=""
+      name="jobTech"
+      required
+      [(ngModel)]="jobTech"
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+
+  <button class="btn btn-primary" type="submit" (click)="submit()">Submit form</button>
+</form>
+
+interviewObj: {{interviewObj |json}}

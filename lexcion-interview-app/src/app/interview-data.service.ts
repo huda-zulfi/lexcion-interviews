@@ -1,46 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InterviewDataService {
-  data: any[] = [
-    {
-      interviewId: 1,
-      cosultantCompany: 'OlympiaCG',
-      endClient: 'citi',
-      jobTitle: 'Sr. Developer',
-      jobTech: ['node', 'angular'],
-      levelInterview: 'two',
-      date: new Date(),
-      recuriterName: 'asd',
-      recuriterEmail: 'asdfdf',
-    },
-    {
-      interviewId: 2,
-      cosultantCompany: 'Zulifqar',
-      endClient: 'citi',
-      jobTitle: 'Sr. Developer',
-      jobTech: ['node', 'angular'],
-      levelInterview: 'two',
-      date: new Date(),
-      recuriterName: 'asd',
-      recuriterEmail: 'asdfdf',
-    },
-    {
-      interviewId: 3,
-      cosultantCompany: 'Malik',
-      endClient: 'citi',
-      jobTitle: 'Sr. Developer',
-      jobTech: ['node', 'angular'],
-      levelInterview: 'two',
-      date: new Date(),
-      recuriterName: 'asd',
-      recuriterEmail: 'asdfdf',
-    },
-  ];
+
   constructor(private http: HttpClient) {}
 
   getData() {
@@ -57,7 +23,7 @@ export class InterviewDataService {
     }
   }
 
-  getOneData(id: number):Observable<any> {
+  getOneData(id: number): Observable<any> {
     try {
       let params: any = { interviewId: id };
       const response = this.http.get('http://localhost:3000/getInterviewById', {
@@ -66,7 +32,31 @@ export class InterviewDataService {
       return response;
     } catch (error) {
       console.log('error ', error);
-      return of('serve is down again') ;
+      return of('serve is down again');
     }
+  }
+
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+  createInterview(interviewInfo: any) {
+    const resp = this.http.post(
+      'http://localhost:3000/createInterview',
+      interviewInfo,
+      { headers: this.headers }
+    );
+
+    
+    console.log('Response from backend create API', resp);
+
+       resp.subscribe((data) => {
+         if (data) {
+           console.log("Data returned from BE", data)
+           // mouse over -> ServerResponse.success: boolean
+           //this.flashMessage.show('Registration successful', { cssClass: 'alert-success', timeout: 3200 });
+         } else {
+           console.error("something went wrong")
+           //this.flashMessage.show('Registration failed', { cssClass: 'alert-danger', timeout: 3200 });
+         }
+       });
   }
 }

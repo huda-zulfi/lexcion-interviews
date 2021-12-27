@@ -1,15 +1,18 @@
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const app = express();
 // cors error fix; to allow request from any domain
 app.use(cors());
 app.options("*", cors());
+// for parsing body in requests
+app.use(bodyParser.json());
 
 const port = 3000;
 
 // for all inteviews
 app.get("/interviews", (req, res) => {
-  console.log(req.query.huda);
+  // console.log(req.query.huda);
   res.send(data);
 });
 
@@ -19,18 +22,29 @@ app.get("/getInterviewById", (req, res) => {
   const idStr = req.query.interviewId
   const idNum = parseInt(idStr);
   const foundInterv = data.find((e) => { return e.interviewId === idNum; })
-  console.log("found Interview",foundInterv)
+  // console.log("found Interview",foundInterv)
   res.send(foundInterv);
+});
+
+app.post("/createInterview", (req, res) => {
+  console.log("data from front end", req.body);
+  data.push(req.body)
+  res.statusCode = "201"
+  res.send(req.body)
 });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
+//create interview on the backend
+
+
+
 data = [
   {
     interviewId: 1,
-    cosultantCompany: "OlympiaCG",
+    consultantCompany: "OlympiaCG",
     endClient: "citi",
     jobTitle: "Sr. Developer",
     jobTech: ["node", "angular"],
@@ -41,7 +55,7 @@ data = [
   },
   {
     interviewId: 2,
-    cosultantCompany: "Zulifqar",
+    consultantCompany: "Zulifqar",
     endClient: "citi",
     jobTitle: "Sr. Developer",
     jobTech: ["node", "angular"],
@@ -52,7 +66,7 @@ data = [
   },
   {
     interviewId: 3,
-    cosultantCompany: "Malik",
+    consultantCompany: "Malik",
     endClient: "citi",
     jobTitle: "Sr. Developer",
     jobTech: ["node", "angular"],
