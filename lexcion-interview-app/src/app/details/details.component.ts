@@ -14,13 +14,21 @@ export class DetailsComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.activatedRoute.params.subscribe((param) => {
       const idStr = param['id'];
       const idNum = parseInt(idStr);
-      this.details = this.interview.getOneData(idNum);
+      this.getInterviewById(idNum);
     });
 
     console.log('i am getting data', this.details);
+  }
+
+  getInterviewById(id: any) {
+    const resp = this.interview.getOneData(id);
+    resp.subscribe((data) => {
+      console.log('Data after afdsdgfsdfaer:: ', data);
+      this.details = data;
+    });
   }
 }
