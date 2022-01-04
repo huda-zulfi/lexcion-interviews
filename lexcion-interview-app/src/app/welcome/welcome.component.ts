@@ -15,7 +15,7 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     try {
-       this.data = this.interviewData.getData();
+       this.data = this.interviewData.getInterviews();
     } catch (e) {
       console.log("error in component: ",e )
     }

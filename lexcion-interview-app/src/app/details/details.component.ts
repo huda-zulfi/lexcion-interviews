@@ -25,7 +25,7 @@ export class DetailsComponent implements OnInit {
   }
 
   getInterviewById(id: any) {
-    const resp = this.interview.getOneData(id);
+    const resp = this.interview.getInterviewById(id);
     resp.subscribe((data) => {
       console.log('Data after afdsdgfsdfaer:: ', data);
       this.details = data;
