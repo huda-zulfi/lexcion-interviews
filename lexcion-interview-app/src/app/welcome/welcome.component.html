@@ -7,11 +7,24 @@
           <p class="card-text">{{ d.recuriterName }}</p>
           <p class="card-text">{{ d.jobTitle }}</p>
           <p class="card-text">{{ d.interviewId }}</p>
-          <a
-            [routerLink]="['/details', d.interviewId, '']"
-            class="btn btn-primary"
-            >Details</a
-          >
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <a
+                  [routerLink]="['/details', d.interviewId, '']"
+                  class="btn btn-primary"
+                  >Details
+                </a>
+              </div>
+              <div>
+                <a
+                  [routerLink]="['/edit-interview', d.interviewId, '']"
+                  class="btn btn-primary"
+                  >Update Details
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
