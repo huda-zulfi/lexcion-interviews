@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailsComponent } from './details/details.component';
 import { EditInterviewComponent } from './edit-interview/edit-interview.component';
+import { InterFormComponent } from './inter-form/inter-form.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'details/:id/', component: DetailsComponent },
   { path: 'create-interview', component: PostDetailComponent },
   { path: 'edit-interview/:id/', component: EditInterviewComponent },
+  { path: 'interview-form/:id/', component: InterFormComponent },
 ];
 
 @NgModule({

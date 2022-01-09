@@ -1,1 +1,49 @@
 <p>edit-interview works!</p>
+
+<div class="alert alert-primary" role="alert">
+  <div class="row h3">
+    <div class="col-6" style="border-right: 4px solid blue">
+      Consultant Company
+    </div>
+    Consultant Company: {{ unit?.consultantCompany }}
+    <input type="text" id="lname" name="lname" [(ngModel)]="consulComp" />
+  </div>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+  <div class="row h3">
+    <div class="col-6" style="border-right: 4px solid blue">End Client</div>
+    <div class="col-6">{{ unit.endClient }}</div>
+    <input type="text" id="lname" name="lname" [(ngModel)]="eClient" />
+  </div>
+</div>
+<div class="alert alert-success" role="alert">
+  <div class="row h3">
+    <div class="col-6" style="border-right: 4px solid blue">Job Title</div>
+    Job tilte: {{ unit.jobTitle }}
+    <input type="text" id="lname" name="lname" [(ngModel)]="jTitle" />
+  </div>
+</div>
+<div class="alert alert-danger" role="alert">
+  <div class="row h3">
+    <div class="col-6" style="border-right: 4px solid blue">Job Tech</div>
+    {{ unit.jobTech }}
+    <input type="text" id="lname" name="lname" [(ngModel)]="jTech" />
+  </div>
+</div>
+<div class="alert alert-warning" role="alert">
+  Level of interviews : {{ unit.levelInterview }}
+  <input type="text" id="lname" name="lname" [(ngModel)]="lInterview" />
+</div>
+<div class="alert alert-info" role="alert">
+  Date it was conducted on: {{ unit.date | date: "MM/dd/yy" }}
+  <input type="text" id="lname" name="lname" [(ngModel)]="day" />
+</div>
+<div class="alert alert-light" role="alert">
+  Name of the Recuriter is : {{ unit.recuriterName }}
+  <input type="text" id="lname" name="lname" [(ngModel)]="recName" />
+</div>
+<div class="alert alert-dark" role="alert">
+  Email address: {{ unit.recuriterEmail }}
+  <input type="text" id="lname" name="lname" [(ngModel)]="recEmail" />
+</div>

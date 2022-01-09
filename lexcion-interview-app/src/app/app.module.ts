@@ -9,9 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { FormsModule } from '@angular/forms';
 import { EditInterviewComponent } from './edit-interview/edit-interview.component';
+import { InterFormComponent } from './inter-form/inter-form.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, DetailsComponent, PostDetailComponent, EditInterviewComponent],
+  declarations: [AppComponent, WelcomeComponent, DetailsComponent, PostDetailComponent, EditInterviewComponent, InterFormComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

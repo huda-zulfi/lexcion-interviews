@@ -1,0 +1,244 @@
+
+
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">Interview Id</label>
+        <input
+          type="number"
+          class="form-control"
+          id="interviewId"
+          required
+          [(ngModel)]="model.interviewId"
+          name="interviewId"
+          #interviewId="ngModel"
+        />
+
+        <div
+          [hidden]="interviewId.valid || interviewId.pristine"
+          class="alert alert-danger"
+        >
+          Interview Id is required
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="model.name"
+          name="name"
+          #name="ngModel"
+        />
+
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <label for="name">Consultant Company</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="model.consultantCompany"
+          name="consultantCompany"
+          #consultantCompany="ngModel"
+        />
+
+        <div
+          [hidden]="consultantCompany.valid || consultantCompany.pristine"
+          class="alert alert-danger"
+        >
+          Consultant Company is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">End Client</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="model.endClient"
+          name="endClient"
+          #endClient="ngModel"
+        />
+
+        <div
+          [hidden]="endClient.valid || endClient.pristine"
+          class="alert alert-danger"
+        >
+          End Client is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Job Tech</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="model.jobTech"
+          name="jobTech"
+          #jobTech="ngModel"
+        />
+
+        <div
+          [hidden]="jobTech.valid || jobTech.pristine"
+          class="alert alert-danger"
+        >
+          Job Techonogly is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Job Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="model.jobTitle"
+          name="jobTitle"
+          #jobTitle="ngModel"
+        />
+
+        <div
+          [hidden]="jobTitle.valid || jobTitle.pristine"
+          class="alert alert-danger"
+        >
+          Job Title is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Level Interview</label>
+        <input
+          type="text"
+          class="form-control"
+          id="levelInterview"
+          required
+          [(ngModel)]="model.levelInterview"
+          name="levelInterview"
+          #levelInterview="ngModel"
+        />
+
+        <div
+          [hidden]="levelInterview.valid || levelInterview.pristine"
+          class="alert alert-danger"
+        >
+          Level Interview is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Recuriter Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="recuriterName"
+          required
+          [(ngModel)]="model.recuriterName"
+          name="recuriterName"
+          #recuriterName="ngModel"
+        />
+
+        <div
+          [hidden]="recuriterName.valid || recuriterName.pristine"
+          class="alert alert-danger"
+        >
+          Recuriter Name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Recuriter Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="recuriterEmail"
+          required
+          [(ngModel)]="model.recuriterEmail"
+          name="recuriterEmail"
+          #recuriterEmail="ngModel"
+        />
+
+        <div
+          [hidden]="recuriterEmail.valid || recuriterEmail.pristine"
+          class="alert alert-danger"
+        >
+          Recuriter Email is required
+        </div>
+      </div>
+      <!-- 
+      <div class="form-group">
+        <label for="alterEgo">Huda Yawaing</label>
+        <input
+          type="text"
+          class="form-control"
+          id="alterEgo"
+          [(ngModel)]="model.alterEgo"
+          name="alterEgo"
+          required
+          #alterEgo="ngModel"
+        />
+      </div>
+      <div [hidden]="alterEgo.valid" class="alert alert-danger">
+        Huda is required
+      </div> -->
+
+      <!-- <div class="form-group">
+        <label for="power">Hero Power</label>
+        <select
+          class="form-control"
+          id="power"
+          required
+          [(ngModel)]="model.power"
+          name="power"
+          #power="ngModel"
+        >
+          <option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
+        </select>
+        <div
+          [hidden]="power.valid || power.pristine"
+          class="alert alert-danger"
+        >
+          Power is required
+        </div>
+      </div> -->
+
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!heroForm.form.valid"
+      >
+        Submit
+      </button>
+      <!-- <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button> -->
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <!-- <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9">{{ model.alterEgo }}</div>
+    </div> -->
+    <!-- <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9">{{ model.power }}</div>
+    </div> -->
+    <br />
+    <button class="btn btn-primary" (click)="onSubmit()">Edit</button>
+  </div>
+</div>
